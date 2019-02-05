@@ -1,8 +1,8 @@
 FROM debian:stretch
 
-RUN apt update \
- && apt upgrade -y
-RUN apt install varnish -y
+RUN set -ex; \
+ apt update; \
+ apt upgrade -y
+RUN apt install memcached php-memcached -y
 
-COPY src/default.vcl /etc/varnish/default.vcl
-COPY src/varnish /etc/default/varnish
+COPY src/memcached.conf /etc/memcached.conf
