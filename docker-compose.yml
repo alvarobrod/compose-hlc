@@ -13,4 +13,4 @@ services:
       - ./maria_db_data:/var/lib/mysql
 
   memcache:
-    build: cache_bd
+    build: ./cache_bd
