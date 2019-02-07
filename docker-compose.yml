@@ -16,8 +16,8 @@ services:
     build: cache_bd
     ports:
       - 11211:11211
-   #image: bitnami/memcached:latest
-   #ports:
-     #- 11211:11211
-   #environment:
-     #- MEMCACHED_CACHE_SIZE=128
+
+  web:
+    build: servidor_web
+    ports:
+      - 80:80
