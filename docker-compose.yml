@@ -13,8 +13,11 @@ services:
       - ./maria_db_data:/var/lib/mysql
 
   memcache:
-    image: bitnami/memcached:latest
+    build: ./cache_db/Dockerfile
     ports:
       - 11211:11211
-    environment:
-      - MEMCACHED_CACHE_SIZE=128
+   #image: bitnami/memcached:latest
+   #ports:
+     #- 11211:11211
+   #environment:
+     #- MEMCACHED_CACHE_SIZE=128
